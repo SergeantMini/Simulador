@@ -46,6 +46,12 @@ Partial Class Form1
         Me.LSensPeso3 = New System.Windows.Forms.Label()
         Me.PBJar3 = New System.Windows.Forms.PictureBox()
         Me.BComienzo = New System.Windows.Forms.Button()
+        Me.CBPos1 = New System.Windows.Forms.CheckBox()
+        Me.CBPos2 = New System.Windows.Forms.CheckBox()
+        Me.CBPos3 = New System.Windows.Forms.CheckBox()
+        Me.CBPos4 = New System.Windows.Forms.CheckBox()
+        Me.CBPos5 = New System.Windows.Forms.CheckBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PBJar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBJar2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBJar3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,7 +83,7 @@ Partial Class Form1
         '
         'LMuestraSangre
         '
-        Me.LMuestraSangre.BackColor = System.Drawing.Color.Firebrick
+        Me.LMuestraSangre.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.LMuestraSangre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LMuestraSangre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LMuestraSangre.Location = New System.Drawing.Point(38, 113)
@@ -311,12 +317,79 @@ Partial Class Form1
         '
         'BComienzo
         '
+        Me.BComienzo.BackColor = System.Drawing.Color.OliveDrab
         Me.BComienzo.Location = New System.Drawing.Point(569, 403)
         Me.BComienzo.Name = "BComienzo"
         Me.BComienzo.Size = New System.Drawing.Size(130, 46)
         Me.BComienzo.TabIndex = 22
         Me.BComienzo.Text = "Comenzar medición"
-        Me.BComienzo.UseVisualStyleBackColor = True
+        Me.BComienzo.UseVisualStyleBackColor = False
+        '
+        'CBPos1
+        '
+        Me.CBPos1.AutoSize = True
+        Me.CBPos1.Checked = True
+        Me.CBPos1.CheckState = System.Windows.Forms.CheckState.Indeterminate
+        Me.CBPos1.Location = New System.Drawing.Point(249, 131)
+        Me.CBPos1.Name = "CBPos1"
+        Me.CBPos1.Size = New System.Drawing.Size(15, 14)
+        Me.CBPos1.TabIndex = 23
+        Me.CBPos1.UseVisualStyleBackColor = True
+        '
+        'CBPos2
+        '
+        Me.CBPos2.AutoSize = True
+        Me.CBPos2.Checked = True
+        Me.CBPos2.CheckState = System.Windows.Forms.CheckState.Indeterminate
+        Me.CBPos2.Location = New System.Drawing.Point(275, 162)
+        Me.CBPos2.Name = "CBPos2"
+        Me.CBPos2.Size = New System.Drawing.Size(15, 14)
+        Me.CBPos2.TabIndex = 24
+        Me.CBPos2.UseVisualStyleBackColor = True
+        '
+        'CBPos3
+        '
+        Me.CBPos3.AutoSize = True
+        Me.CBPos3.Checked = True
+        Me.CBPos3.CheckState = System.Windows.Forms.CheckState.Indeterminate
+        Me.CBPos3.Location = New System.Drawing.Point(334, 162)
+        Me.CBPos3.Name = "CBPos3"
+        Me.CBPos3.Size = New System.Drawing.Size(15, 14)
+        Me.CBPos3.TabIndex = 25
+        Me.CBPos3.UseVisualStyleBackColor = True
+        '
+        'CBPos4
+        '
+        Me.CBPos4.AutoSize = True
+        Me.CBPos4.Checked = True
+        Me.CBPos4.CheckState = System.Windows.Forms.CheckState.Indeterminate
+        Me.CBPos4.Location = New System.Drawing.Point(296, 162)
+        Me.CBPos4.Name = "CBPos4"
+        Me.CBPos4.Size = New System.Drawing.Size(15, 14)
+        Me.CBPos4.TabIndex = 26
+        Me.CBPos4.UseVisualStyleBackColor = True
+        '
+        'CBPos5
+        '
+        Me.CBPos5.AutoSize = True
+        Me.CBPos5.Checked = True
+        Me.CBPos5.CheckState = System.Windows.Forms.CheckState.Indeterminate
+        Me.CBPos5.Location = New System.Drawing.Point(354, 136)
+        Me.CBPos5.Name = "CBPos5"
+        Me.CBPos5.Size = New System.Drawing.Size(15, 14)
+        Me.CBPos5.TabIndex = 27
+        Me.CBPos5.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Label1.Location = New System.Drawing.Point(862, 441)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 28
+        Me.Label1.Text = "Label1"
         '
         'Form1
         '
@@ -324,6 +397,12 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(984, 461)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.CBPos5)
+        Me.Controls.Add(Me.CBPos4)
+        Me.Controls.Add(Me.CBPos3)
+        Me.Controls.Add(Me.CBPos2)
+        Me.Controls.Add(Me.CBPos1)
         Me.Controls.Add(Me.BComienzo)
         Me.Controls.Add(Me.PBJar3)
         Me.Controls.Add(Me.LSensPeso3)
@@ -380,4 +459,10 @@ Partial Class Form1
     Friend WithEvents LSensPeso3 As Label
     Friend WithEvents PBJar3 As PictureBox
     Friend WithEvents BComienzo As Button
+    Friend WithEvents CBPos1 As CheckBox
+    Friend WithEvents CBPos2 As CheckBox
+    Friend WithEvents CBPos3 As CheckBox
+    Friend WithEvents CBPos4 As CheckBox
+    Friend WithEvents CBPos5 As CheckBox
+    Friend WithEvents Label1 As Label
 End Class
