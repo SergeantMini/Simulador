@@ -50,8 +50,11 @@ Partial Class Form1
         Me.CBPos2 = New System.Windows.Forms.CheckBox()
         Me.CBPos3 = New System.Windows.Forms.CheckBox()
         Me.CBPos4 = New System.Windows.Forms.CheckBox()
-        Me.CBPos5 = New System.Windows.Forms.CheckBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.CBPinch3 = New System.Windows.Forms.CheckBox()
+        Me.BAgregarMuestra = New System.Windows.Forms.Button()
+        Me.CBPinch2 = New System.Windows.Forms.CheckBox()
+        Me.CBPinch1 = New System.Windows.Forms.CheckBox()
+        Me.CBPinch4 = New System.Windows.Forms.CheckBox()
         CType(Me.PBJar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBJar2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBJar3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -369,27 +372,59 @@ Partial Class Form1
         Me.CBPos4.TabIndex = 26
         Me.CBPos4.UseVisualStyleBackColor = True
         '
-        'CBPos5
+        'CBPinch3
         '
-        Me.CBPos5.AutoSize = True
-        Me.CBPos5.Checked = True
-        Me.CBPos5.CheckState = System.Windows.Forms.CheckState.Indeterminate
-        Me.CBPos5.Location = New System.Drawing.Point(354, 136)
-        Me.CBPos5.Name = "CBPos5"
-        Me.CBPos5.Size = New System.Drawing.Size(15, 14)
-        Me.CBPos5.TabIndex = 27
-        Me.CBPos5.UseVisualStyleBackColor = True
+        Me.CBPinch3.AutoSize = True
+        Me.CBPinch3.Checked = True
+        Me.CBPinch3.CheckState = System.Windows.Forms.CheckState.Indeterminate
+        Me.CBPinch3.Location = New System.Drawing.Point(366, 136)
+        Me.CBPinch3.Name = "CBPinch3"
+        Me.CBPinch3.Size = New System.Drawing.Size(15, 14)
+        Me.CBPinch3.TabIndex = 27
+        Me.CBPinch3.UseVisualStyleBackColor = True
         '
-        'Label1
+        'BAgregarMuestra
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Label1.Location = New System.Drawing.Point(862, 441)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 28
-        Me.Label1.Text = "Label1"
+        Me.BAgregarMuestra.BackColor = System.Drawing.Color.Red
+        Me.BAgregarMuestra.Location = New System.Drawing.Point(501, 352)
+        Me.BAgregarMuestra.Name = "BAgregarMuestra"
+        Me.BAgregarMuestra.Size = New System.Drawing.Size(100, 45)
+        Me.BAgregarMuestra.TabIndex = 29
+        Me.BAgregarMuestra.Text = "Agregar muestra de sangre"
+        Me.BAgregarMuestra.UseVisualStyleBackColor = False
+        '
+        'CBPinch2
+        '
+        Me.CBPinch2.AutoSize = True
+        Me.CBPinch2.Checked = True
+        Me.CBPinch2.CheckState = System.Windows.Forms.CheckState.Indeterminate
+        Me.CBPinch2.Location = New System.Drawing.Point(376, 66)
+        Me.CBPinch2.Name = "CBPinch2"
+        Me.CBPinch2.Size = New System.Drawing.Size(15, 14)
+        Me.CBPinch2.TabIndex = 30
+        Me.CBPinch2.UseVisualStyleBackColor = True
+        '
+        'CBPinch1
+        '
+        Me.CBPinch1.AutoSize = True
+        Me.CBPinch1.Checked = True
+        Me.CBPinch1.CheckState = System.Windows.Forms.CheckState.Indeterminate
+        Me.CBPinch1.Location = New System.Drawing.Point(61, 162)
+        Me.CBPinch1.Name = "CBPinch1"
+        Me.CBPinch1.Size = New System.Drawing.Size(15, 14)
+        Me.CBPinch1.TabIndex = 31
+        Me.CBPinch1.UseVisualStyleBackColor = True
+        '
+        'CBPinch4
+        '
+        Me.CBPinch4.AutoSize = True
+        Me.CBPinch4.Checked = True
+        Me.CBPinch4.CheckState = System.Windows.Forms.CheckState.Indeterminate
+        Me.CBPinch4.Location = New System.Drawing.Point(709, 136)
+        Me.CBPinch4.Name = "CBPinch4"
+        Me.CBPinch4.Size = New System.Drawing.Size(15, 14)
+        Me.CBPinch4.TabIndex = 32
+        Me.CBPinch4.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -397,8 +432,11 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(984, 461)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.CBPos5)
+        Me.Controls.Add(Me.CBPinch4)
+        Me.Controls.Add(Me.CBPinch1)
+        Me.Controls.Add(Me.CBPinch2)
+        Me.Controls.Add(Me.BAgregarMuestra)
+        Me.Controls.Add(Me.CBPinch3)
         Me.Controls.Add(Me.CBPos4)
         Me.Controls.Add(Me.CBPos3)
         Me.Controls.Add(Me.CBPos2)
@@ -463,6 +501,9 @@ Partial Class Form1
     Friend WithEvents CBPos2 As CheckBox
     Friend WithEvents CBPos3 As CheckBox
     Friend WithEvents CBPos4 As CheckBox
-    Friend WithEvents CBPos5 As CheckBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents CBPinch3 As CheckBox
+    Friend WithEvents BAgregarMuestra As Button
+    Friend WithEvents CBPinch2 As CheckBox
+    Friend WithEvents CBPinch1 As CheckBox
+    Friend WithEvents CBPinch4 As CheckBox
 End Class
