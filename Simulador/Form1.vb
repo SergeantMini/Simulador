@@ -5,6 +5,7 @@ Public Class Form1
     'color de solución de sistema es lightblue
     'color de solución de calibración es amarillo
     'color de muestra de sangre es rojo
+    'color de vacío es button face
     Dim pos As Int32
 
     Public Function CerrarTodoPaso()
@@ -104,44 +105,120 @@ Public Class Form1
         Return 0
     End Function
 
+    Public Function cerrarValvulaPinch(ByVal pos As Int32) As String
+        If (pos = 1) Then
+            If (CBPinch1.CheckState = CheckState.Unchecked) Then
+                Console.WriteLine("Cerrando válvula Pinch 1")
+                CBPinch1.CheckState = CheckState.Indeterminate
+            End If
+        ElseIf (pos = 2) Then
+            If (CBPinch2.CheckState = CheckState.Unchecked) Then
+                Console.WriteLine("Cerrando válvula Pinch 2")
+                CBPinch2.CheckState = CheckState.Indeterminate
+            End If
+        ElseIf (pos = 3) Then
+            If (CBPinch3.CheckState = CheckState.Unchecked) Then
+                Console.WriteLine("Cerrando válvula Pinch 3")
+                CBPinch3.CheckState = CheckState.Indeterminate
+            End If
+        ElseIf (pos = 4) Then
+            If (CBPinch4.CheckState = CheckState.Unchecked) Then
+                Console.WriteLine("Cerrando válvula Pinch 4")
+                CBPinch4.CheckState = CheckState.Indeterminate
+            End If
+            Return 0
+        End If
+        Return 0
+    End Function
+
     Public Function pasarSolucionDeSistemaHastaCeldaDeMedicion()
         LSensGota1.BackColor = Color.LightBlue
         LValvSelect.BackColor = Color.LightBlue
         LPinch3.BackColor = Color.LightBlue
         LSensColor.BackColor = Color.LightBlue
         LCeldaMedicion.BackColor = Color.LightBlue
+        Console.WriteLine("Solución de sistema en celda de medición")
         Return 0
     End Function
 
-    Public Function Paso1y2()
+    Public Function pasarAirePorElSistema()
+        Console.WriteLine("Pasando aire por el sistema")
+        LValvSelect.BackColor = Color.White
+        LPinch3.BackColor = Color.White
+        LSensColor.BackColor = Color.White
+        LCeldaMedicion.BackColor = Color.White
+        LValvPinch4.BackColor = Color.White
+        'cambiar imagen de depósito de desechos
+        Return 0
+    End Function
+
+    Public Function retenerSolucionDeSistemaEnCeldaDeMedicion()
+        LSensGota1.BackColor = SystemColors.ButtonFace
+        LValvSelect.BackColor = SystemColors.ButtonFace
+        LPinch3.BackColor = SystemColors.ButtonFace
+        LSensColor.BackColor = Color.LightBlue
+        LCeldaMedicion.BackColor = Color.LightBlue
+        Return 0
+    End Function
+
+    Public Function retenerAireEnCelda()
+        LValvSelect.BackColor = SystemColors.ButtonFace
+        LPinch3.BackColor = SystemColors.ButtonFace
+        LSensColor.BackColor = Color.White
+        LCeldaMedicion.BackColor = Color.White
+        Return 0
+    End Function
+
+    Public Function pasarSolucionDeCalibracion()
+        Console.WriteLine("Pasando solución de calibración hasta celda de medición")
+        LSensGota2.BackColor = Color.Yellow
+        LValvSelect.BackColor = Color.Yellow
+        LPinch3.BackColor = Color.Yellow
+        LSensColor.BackColor = Color.Yellow
+        LCeldaMedicion.BackColor = Color.Yellow
+        Return 0
+        Return 0
+    End Function
+
+    Public Function Paso1()
         abrirValvulaSelectoraEnPos(1)
         abrirValvulaPinch(3)
         pasarSolucionDeSistemaHastaCeldaDeMedicion()
         Return 0
     End Function
 
+    Public Function Paso2()
+        Console.WriteLine("Se detecta el paso de la solución por la celda de medición por 1 segundo")
+        Return 0
+    End Function
+
     Public Function Paso3()
-        CerrarTodoPaso()
-        LSensGota1.BackColor = SystemColors.ButtonFace
-        LValvSelect.BackColor = SystemColors.ButtonFace
-        LPinch3.BackColor = Color.LightBlue
-        LSensColor.BackColor = Color.LightBlue
-        LCeldaMedicion.BackColor = Color.LightBlue
-        Console.WriteLine("Solución flush en celda de medición")
+        cerrarValvulaSelectoraEnPos(1)
+        cerrarValvulaPinch(3)
+        retenerSolucionDeSistemaEnCeldaDeMedicion()
         Return 0
     End Function
 
     Public Function Paso4()
-        CBPos4.CheckState = CheckState.Unchecked
-        CBPinch3.CheckState = CheckState.Unchecked
-        CBPinch4.CheckState = CheckState.Unchecked
-        Console.WriteLine("Abriendo válvula selectora en posición de aire y válvula pinch 3 y 4")
-        Console.WriteLine("Pasando aire por el sistema")
-        LValvSelect.BackColor = Color.White
-        LPinch3.BackColor = Color.White
-        LSensColor.BackColor = Color.White
-        LCeldaMedicion.BackColor = Color.White
-        DepositoDesechos()
+        abrirValvulaSelectoraEnPos(4)
+        abrirValvulaPinch(3)
+        abrirValvulaPinch(4)
+        pasarAirePorElSistema()
+        Return 0
+    End Function
+
+    Public Function Paso5()
+        cerrarValvulaSelectoraEnPos(4)
+        cerrarValvulaPinch(3)
+        cerrarValvulaPinch(4)
+        retenerAireEnCelda()
+        Return 0
+    End Function
+
+    Public Function Paso6()
+        abrirValvulaSelectoraEnPos(3)
+        abrirValvulaPinch(3)
+        pasarSolucionDeCalibracion()
         Return 0
     End Function
 
@@ -149,9 +226,12 @@ Public Class Form1
         If (LMuestraSangre.BackColor = Color.Firebrick) Then
             Console.WriteLine("Hay muestra de sangre en el depósito")
             'LSensGota3.BackColor = Color.Firebrick
-            Paso1y2()
+            Paso1()
+            Paso2()
             Paso3()
-
+            Paso4()
+            Paso5()
+            Paso6()
         ElseIf (LMuestraSangre.BackColor = SystemColors.ButtonFace) Then
             MessageBox.Show("Ingresar una muestra de sangre")
         End If
