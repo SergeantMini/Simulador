@@ -180,6 +180,14 @@ Public Class Form1
         Return 0
     End Function
 
+    Public Function retenerSolucionDeCalibracion()
+        LValvSelect.BackColor = SystemColors.ButtonFace
+        LPinch3.BackColor = SystemColors.ButtonFace
+        LSensColor.BackColor = Color.Yellow
+        LCeldaMedicion.BackColor = Color.Yellow
+        Return 0
+    End Function
+
     Public Function Paso1()
         abrirValvulaSelectoraEnPos(1)
         abrirValvulaPinch(3)
@@ -188,7 +196,7 @@ Public Class Form1
     End Function
 
     Public Function Paso2()
-        Console.WriteLine("Se detecta el paso de la solución por la celda de medición por 1 segundo")
+        Console.WriteLine("Se detecta el paso de la solución flush por la celda de medición por 1 segundo")
         Return 0
     End Function
 
@@ -221,6 +229,41 @@ Public Class Form1
         pasarSolucionDeCalibracion()
         Return 0
     End Function
+
+    Public Function Paso7()
+        Console.WriteLine("Se detecta el paso de la solución de calibración por la celda de medición por 1 segundo")
+        Return 0
+    End Function
+
+    Public Function Paso8()
+        cerrarValvulaSelectoraEnPos(3)
+        cerrarValvulaPinch(3)
+        retenerSolucionDeCalibracion()
+        Return 0
+    End Function
+
+    Public Function Paso9()
+        Console.WriteLine("Se mide el valor de glucosa de la solución de calibración para calibrar el instrumento")
+        Return 0
+    End Function
+
+    Public Function Paso10()
+        abrirValvulaSelectoraEnPos(4)
+        abrirValvulaPinch(3)
+        abrirValvulaPinch(4)
+        pasarAirePorElSistema()
+        Return 0
+    End Function
+
+    Public Function Paso11()
+        cerrarValvulaPinch(4)
+        cerrarValvulaPinch(3)
+        cerrarValvulaSelectoraEnPos(4)
+        retenerAireEnCelda()
+        Return 0
+    End Function
+
+
 
     Private Sub BComienzo_Click(sender As Object, e As EventArgs) Handles BComienzo.Click
         If (LMuestraSangre.BackColor = Color.Firebrick) Then
