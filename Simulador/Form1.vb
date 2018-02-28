@@ -1,4 +1,4 @@
-﻿Imports System.Threading.Tasks
+Imports System.Threading.Tasks
 Imports System.Timers
 Public Class Form1
     'el color de aire es blanco
@@ -7,6 +7,7 @@ Public Class Form1
     'color de muestra de sangre es rojo
     'color de vacío es button face
     Dim pos As Int32
+    Dim nombre As String
 
     Public Function CerrarTodoPaso()
         CBPinch1.CheckState = CheckState.Indeterminate
@@ -188,6 +189,32 @@ Public Class Form1
         Return 0
     End Function
 
+    Public Function pasarMuestraDeSangre()
+        Console.WriteLine("Pasando muestra de sangre hasta celda de medición")
+        LSensGota2.BackColor = Color.Red
+        LValvSelect.BackColor = Color.Red
+        LPinch3.BackColor = Color.Red
+        LSensColor.BackColor = Color.Red
+        LCeldaMedicion.BackColor = Color.Red
+        Return 0
+    End Function
+
+    Public Function retenerMuestraDeSangre()
+        LValvSelect.BackColor = SystemColors.ButtonFace
+        LPinch3.BackColor = SystemColors.ButtonFace
+        LSensColor.BackColor = Color.Red
+        LCeldaMedicion.BackColor = Color.Red
+        Return 0
+    End Function
+
+    Public Function limpiarCamaraDeMuestra()
+        LPinch1.BackColor = Color.LightBlue
+        LMuestraSangre.BackColor = Color.LightBlue
+        LValvSelect.BackColor = Color.LightBlue
+        LPinch2.BackColor = Color.LightBlue
+        Return 0
+    End Function
+
     Public Function Paso1()
         abrirValvulaSelectoraEnPos(1)
         abrirValvulaPinch(3)
@@ -263,7 +290,107 @@ Public Class Form1
         Return 0
     End Function
 
+    Public Function Paso12()
+        abrirValvulaSelectoraEnPos(1)
+        abrirValvulaPinch(3)
+        pasarMuestraDeSangre()
+        Return 0
+    End Function
 
+    Public Function Paso13()
+        Console.WriteLine("Se detecta el paso de la muestra por la celda de medición por un segundo")
+        Return 0
+    End Function
+
+    Public Function Paso14()
+        cerrarValvulaPinch(3)
+        cerrarValvulaSelectoraEnPos(1)
+        retenerMuestraDeSangre()
+        Return 0
+    End Function
+
+    Public Function Paso15()
+        Console.WriteLine("Se mide el color de la muestra mediante el sensor de color.")
+        If (LSensColor.BackColor = Color.Red) Then
+            Console.WriteLine("La muestra corresponde a sangre arterial")
+            Console.WriteLine("Se mide la concentración de glucosa de la muestra con la celda de medición durante diez segundos")
+        Else
+            Console.WriteLine("Muestra no válida")
+        End If
+        Return 0
+    End Function
+
+    Public Function Paso17()
+        Console.WriteLine("Se mide la concentración de glucosa de la muestra con la celda de medición durante diez segundos")
+        Return 0
+    End Function
+
+    Public Function Paso18()
+        abrirValvulaSelectoraEnPos(4)
+        abrirValvulaPinch(3)
+        abrirValvulaPinch(4)
+        pasarAirePorElSistema()
+        Return 0
+    End Function
+
+    Public Function Paso19()
+        cerrarValvulaSelectoraEnPos(4)
+        cerrarValvulaPinch(3)
+        cerrarValvulaPinch(4)
+        retenerAireEnCelda()
+        Return 0
+    End Function
+
+    Public Function Paso20()
+        abrirValvulaSelectoraEnPos(2)
+        abrirValvulaPinch(3)
+        pasarSolucionDeSistemaHastaCeldaDeMedicion()
+        Return 0
+    End Function
+
+    Public Function Paso21()
+        Console.WriteLine("Se detecta el paso de la solución flush con la celda de medición por un segundo")
+        Return 0
+    End Function
+
+    Public Function Paso22()
+        cerrarValvulaPinch(3)
+        cerrarValvulaSelectoraEnPos(2)
+        retenerSolucionDeSistemaEnCeldaDeMedicion()
+        Return 0
+    End Function
+
+    Public Function Paso23()
+        abrirValvulaSelectoraEnPos(1)
+        abrirValvulaPinch(1)
+        abrirValvulaPinch(2)
+        limpiarCamaraDeMuestra()
+        Return 0
+    End Function
+
+    Public Function Paso24()
+        cerrarValvulaSelectoraEnPos(1)
+        cerrarValvulaPinch(1)
+        cerrarValvulaPinch(2)
+        LMuestraSangre.BackColor = SystemColors.ButtonFace
+        LPinch1.BackColor = SystemColors.ButtonFace
+        LPinch2.BackColor = SystemColors.ButtonFace
+        Return 0
+    End Function
+
+    Public Function Paso25()
+        abrirValvulaSelectoraEnPos(4)
+        abrirValvulaPinch(3)
+        pasarAirePorElSistema()
+        Return 0
+    End Function
+
+    Public Function Paso26()
+        cerrarValvulaSelectoraEnPos(4)
+        cerrarValvulaPinch(3)
+        retenerAireEnCelda()
+        Return 0
+    End Function
 
     Private Sub BComienzo_Click(sender As Object, e As EventArgs) Handles BComienzo.Click
         If (LMuestraSangre.BackColor = Color.Firebrick) Then
@@ -275,6 +402,27 @@ Public Class Form1
             Paso4()
             Paso5()
             Paso6()
+            Paso7()
+            Paso8()
+            Paso9()
+            Paso10()
+            Paso11()
+            Paso12()
+            Paso13()
+            Paso14()
+            Paso15()
+            Paso18()
+            Paso19()
+            Paso20()
+            Paso21()
+            Paso22()
+            Paso23()
+            Paso24()
+            Paso25()
+            Paso26()
+            If (LSensColor.BackColor = Color.Red) Then
+
+            End If
         ElseIf (LMuestraSangre.BackColor = SystemColors.ButtonFace) Then
             MessageBox.Show("Ingresar una muestra de sangre")
         End If
