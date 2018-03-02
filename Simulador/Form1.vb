@@ -22,6 +22,8 @@ Public Class Form1
     End Function
 
     Public Function DepositoDesechos()
+        ' en esta función se pretende cambiar la imagen de acuerdo al uso que se le ha dado a las soluciones
+        ' o de acuerdo a la cantidad de desechos que se le da al depósito.
         'If (PBJar3.Image = Image.FromFile("C:\Users\mones\Pictures\SS\jar.jpg")) Then
         'PBJar3.Image = Image.FromFile("C:\Users\mones\Pictures\SS\jarDesechos1.jpg")
         'ElseIf (PBJar3.Image = Image.FromFile("C:\Users\mones\Pictures\SS\jarDesechos1.jpg")) Then
