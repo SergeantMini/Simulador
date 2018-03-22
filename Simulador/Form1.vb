@@ -1,13 +1,14 @@
-Imports System.Threading.Tasks
-Imports System.Timers
+Imports System.ComponentModel
+
 Public Class Form1
-    'el color de aire es blanco
+    'el color de aire es rosa
     'color de solución de sistema es lightblue
     'color de solución de calibración es amarillo
-    'color de muestra de sangre es rojo
+    'color de muestra de sangre es firebrick
     'color de vacío es button face
     Dim pos As Int32
     Dim nombre As String
+
 
     Public Function CerrarTodoPaso()
         CBPinch1.CheckState = CheckState.Indeterminate
@@ -35,22 +36,26 @@ Public Class Form1
     Public Function abrirValvulaSelectoraEnPos(ByVal pos As Int32) As String
         If (pos = 1) Then
             If (CBPos1.CheckState = CheckState.Indeterminate) Then
-                Console.WriteLine("Abriendo válvula selectora en posición de muestra de sangre")
+                TBEstado.Text = ("Abriendo válvula selectora en posición de muestra de sangre")
+                wait(2000)
                 CBPos1.CheckState = CheckState.Unchecked
             End If
         ElseIf (pos = 2) Then
             If (CBPos2.CheckState = CheckState.Indeterminate) Then
-                Console.WriteLine("Abriendo válvula selectora en posición de solución del sistema")
+                TBEstado.Text = ("Abriendo válvula selectora en posición de solución del sistema")
+                wait(2000)
                 CBPos2.CheckState = CheckState.Unchecked
             End If
         ElseIf (pos = 3) Then
             If (CBPos3.CheckState = CheckState.Indeterminate) Then
-                Console.WriteLine("Abriendo válvula selectora en posición de solución de calibración")
+                TBEstado.Text = ("Abriendo válvula selectora en posición de solución de calibración")
+                wait(2000)
                 CBPos3.CheckState = CheckState.Unchecked
             End If
         ElseIf (pos = 4) Then
             If (CBPos4.CheckState = CheckState.Indeterminate) Then
-                Console.WriteLine("Abriendo válvula selectora en posición de aire")
+                TBEstado.Text = ("Abriendo válvula selectora en posición de aire")
+                wait(2000)
                 CBPos4.CheckState = CheckState.Unchecked
             End If
         End If
@@ -60,22 +65,26 @@ Public Class Form1
     Public Function cerrarValvulaSelectoraEnPos(ByVal pos As Int32) As String
         If (pos = 1) Then
             If (CBPos1.CheckState = CheckState.Unchecked) Then
-                Console.WriteLine("Cerrando válvula selectora en posición de muestra de sangre")
+                TBEstado.Text = ("Cerrando válvula selectora en posición de muestra de sangre")
+                wait(2000)
                 CBPos1.CheckState = CheckState.Indeterminate
             End If
         ElseIf (pos = 2) Then
             If (CBPos2.CheckState = CheckState.Unchecked) Then
-                Console.WriteLine("Cerrando válvula selectora en posición de solución del sistema")
+                TBEstado.Text = ("Cerrando válvula selectora en posición de solución del sistema")
+                wait(2000)
                 CBPos2.CheckState = CheckState.Indeterminate
             End If
         ElseIf (pos = 3) Then
             If (CBPos3.CheckState = CheckState.Unchecked) Then
-                Console.WriteLine("Cerrando válvula selectora en posición de solución de calibración")
+                TBEstado.Text = ("Cerrando válvula selectora en posición de solución de calibración")
+                wait(2000)
                 CBPos3.CheckState = CheckState.Indeterminate
             End If
         ElseIf (pos = 4) Then
             If (CBPos4.CheckState = CheckState.Unchecked) Then
-                Console.WriteLine("Cerrando válvula selectora en posición de aire")
+                TBEstado.Text = ("Cerrando válvula selectora en posición de aire")
+                wait(2000)
                 CBPos4.CheckState = CheckState.Indeterminate
             End If
         End If
@@ -85,22 +94,26 @@ Public Class Form1
     Public Function abrirValvulaPinch(ByVal pos As Int32) As String
         If (pos = 1) Then
             If (CBPinch1.CheckState = CheckState.Indeterminate) Then
-                Console.WriteLine("Abriendo válvula Pinch 1")
+                TBEstado.Text = ("Abriendo válvula Pinch 1")
+                wait(2000)
                 CBPinch1.CheckState = CheckState.Unchecked
             End If
         ElseIf (pos = 2) Then
             If (CBPinch2.CheckState = CheckState.Indeterminate) Then
-                Console.WriteLine("Abriendo válvula Pinch 2")
+                TBEstado.Text = ("Abriendo válvula Pinch 2")
+                wait(2000)
                 CBPinch2.CheckState = CheckState.Unchecked
             End If
         ElseIf (pos = 3) Then
             If (CBPinch3.CheckState = CheckState.Indeterminate) Then
-                Console.WriteLine("Abriendo válvula Pinch 3")
+                TBEstado.Text = ("Abriendo válvula Pinch 3")
+                wait(2000)
                 CBPinch3.CheckState = CheckState.Unchecked
             End If
         ElseIf (pos = 4) Then
             If (CBPinch4.CheckState = CheckState.Indeterminate) Then
-                Console.WriteLine("Abriendo válvula Pinch 4")
+                TBEstado.Text = ("Abriendo válvula Pinch 4")
+                wait(2000)
                 CBPinch4.CheckState = CheckState.Unchecked
             End If
             Return 0
@@ -111,22 +124,26 @@ Public Class Form1
     Public Function cerrarValvulaPinch(ByVal pos As Int32) As String
         If (pos = 1) Then
             If (CBPinch1.CheckState = CheckState.Unchecked) Then
-                Console.WriteLine("Cerrando válvula Pinch 1")
+                TBEstado.Text = ("Cerrando válvula Pinch 1")
+                wait(2000)
                 CBPinch1.CheckState = CheckState.Indeterminate
             End If
         ElseIf (pos = 2) Then
             If (CBPinch2.CheckState = CheckState.Unchecked) Then
-                Console.WriteLine("Cerrando válvula Pinch 2")
+                TBEstado.Text = ("Cerrando válvula Pinch 2")
+                wait(2000)
                 CBPinch2.CheckState = CheckState.Indeterminate
             End If
         ElseIf (pos = 3) Then
             If (CBPinch3.CheckState = CheckState.Unchecked) Then
-                Console.WriteLine("Cerrando válvula Pinch 3")
+                TBEstado.Text = ("Cerrando válvula Pinch 3")
+                wait(2000)
                 CBPinch3.CheckState = CheckState.Indeterminate
             End If
         ElseIf (pos = 4) Then
             If (CBPinch4.CheckState = CheckState.Unchecked) Then
-                Console.WriteLine("Cerrando válvula Pinch 4")
+                TBEstado.Text = ("Cerrando válvula Pinch 4")
+                wait(2000)
                 CBPinch4.CheckState = CheckState.Indeterminate
             End If
             Return 0
@@ -135,268 +152,423 @@ Public Class Form1
     End Function
 
     Public Function pasarSolucionDeSistemaHastaCeldaDeMedicion()
-        LSensGota1.BackColor = Color.LightBlue
-        LValvSelect.BackColor = Color.LightBlue
-        LPinch3.BackColor = Color.LightBlue
-        LSensColor.BackColor = Color.LightBlue
-        LCeldaMedicion.BackColor = Color.LightBlue
-        Console.WriteLine("Solución de sistema en celda de medición")
+        LSensGota1.BackColor = Color.Blue
+        wait(1000)
+        LValvSelect.BackColor = Color.Blue
+        wait(1000)
+        LPinch3.BackColor = Color.Blue
+        wait(1000)
+        LSensColor.BackColor = Color.Blue
+        wait(1000)
+        LCeldaMedicion.BackColor = Color.Blue
+        wait(1000)
+        LValvPinch4.BackColor = Color.Blue
+        wait(1000)
+        TBEstado.Text = ("Solución de sistema en celda de medición")
         Return 0
     End Function
 
     Public Function pasarAirePorElSistema()
-        Console.WriteLine("Pasando aire por el sistema")
-        LValvSelect.BackColor = Color.White
-        LPinch3.BackColor = Color.White
-        LSensColor.BackColor = Color.White
-        LCeldaMedicion.BackColor = Color.White
-        LValvPinch4.BackColor = Color.White
+        TBEstado.Text = ("Pasando aire por el sistema")
+        wait(1000)
+        LValvSelect.BackColor = Color.Pink
+        wait(1000)
+        LPinch3.BackColor = Color.Pink
+        wait(1000)
+        LSensColor.BackColor = Color.Pink
+        wait(1000)
+        LCeldaMedicion.BackColor = Color.Pink
+        wait(1000)
+        LValvPinch4.BackColor = Color.Pink
+        wait(1000)
         'cambiar imagen de depósito de desechos
         Return 0
     End Function
 
     Public Function retenerSolucionDeSistemaEnCeldaDeMedicion()
         LSensGota1.BackColor = SystemColors.ButtonFace
+        wait(1000)
         LValvSelect.BackColor = SystemColors.ButtonFace
+        wait(1000)
         LPinch3.BackColor = SystemColors.ButtonFace
-        LSensColor.BackColor = Color.LightBlue
-        LCeldaMedicion.BackColor = Color.LightBlue
+        wait(1000)
+        LSensColor.BackColor = Color.Blue
+        wait(1000)
+        LCeldaMedicion.BackColor = Color.Blue
+        TBEstado.Text = ("Reteniendo solución en celda de medición")
         Return 0
     End Function
 
     Public Function retenerAireEnCelda()
         LValvSelect.BackColor = SystemColors.ButtonFace
+        wait(1000)
         LPinch3.BackColor = SystemColors.ButtonFace
-        LSensColor.BackColor = Color.White
-        LCeldaMedicion.BackColor = Color.White
+        wait(1000)
+        LSensColor.BackColor = Color.Pink
+        wait(1000)
+        LCeldaMedicion.BackColor = Color.Pink
+        wait(1000)
+        TBEstado.Text = ("Reteniendo aire en la celda de medición")
         Return 0
     End Function
 
     Public Function pasarSolucionDeCalibracion()
-        Console.WriteLine("Pasando solución de calibración hasta celda de medición")
+        TBEstado.Text = ("Pasando solución de calibración hasta celda de medición")
+        wait(1000)
         LSensGota2.BackColor = Color.Yellow
+        wait(1000)
         LValvSelect.BackColor = Color.Yellow
+        wait(1000)
         LPinch3.BackColor = Color.Yellow
+        wait(1000)
         LSensColor.BackColor = Color.Yellow
+        wait(1000)
         LCeldaMedicion.BackColor = Color.Yellow
-        Return 0
+        wait(1000)
+        LValvPinch4.BackColor = Color.Yellow
+        wait(1000)
         Return 0
     End Function
 
     Public Function retenerSolucionDeCalibracion()
         LValvSelect.BackColor = SystemColors.ButtonFace
+        wait(1000)
         LPinch3.BackColor = SystemColors.ButtonFace
+        wait(1000)
+        LSensGota2.BackColor = SystemColors.ButtonFace
+        wait(1000)
         LSensColor.BackColor = Color.Yellow
+        wait(1000)
         LCeldaMedicion.BackColor = Color.Yellow
+        wait(1000)
+        TBEstado.Text = ("Reteniendo solución de calibración")
         Return 0
     End Function
 
     Public Function pasarMuestraDeSangre()
-        Console.WriteLine("Pasando muestra de sangre hasta celda de medición")
-        LSensGota2.BackColor = Color.Red
-        LValvSelect.BackColor = Color.Red
-        LPinch3.BackColor = Color.Red
-        LSensColor.BackColor = Color.Red
-        LCeldaMedicion.BackColor = Color.Red
+        TBEstado.Text = ("Pasando muestra de sangre hasta celda de medición")
+        wait(1000)
+        LSensGota3.BackColor = Color.Firebrick
+        wait(1000)
+        LValvSelect.BackColor = Color.Firebrick
+        wait(1000)
+        LPinch3.BackColor = Color.Firebrick
+        wait(1000)
+        LSensColor.BackColor = Color.Firebrick
+        wait(1000)
+        LCeldaMedicion.BackColor = Color.Firebrick
+        wait(1000)
         Return 0
     End Function
 
     Public Function retenerMuestraDeSangre()
         LValvSelect.BackColor = SystemColors.ButtonFace
+        wait(1000)
         LPinch3.BackColor = SystemColors.ButtonFace
-        LSensColor.BackColor = Color.Red
-        LCeldaMedicion.BackColor = Color.Red
+        wait(1000)
+        LSensColor.BackColor = Color.Firebrick
+        wait(1000)
+        LCeldaMedicion.BackColor = Color.Firebrick
+        wait(1000)
+        Console.WriteLine("Reteniendo muestra de sangre")
+        wait(1000)
         Return 0
     End Function
 
     Public Function limpiarCamaraDeMuestra()
-        LPinch1.BackColor = Color.LightBlue
-        LMuestraSangre.BackColor = Color.LightBlue
-        LValvSelect.BackColor = Color.LightBlue
-        LPinch2.BackColor = Color.LightBlue
+        LPinch1.BackColor = Color.Blue
+        wait(1000)
+        LMuestraSangre.BackColor = Color.Blue
+        wait(1000)
+        LValvSelect.BackColor = Color.Blue
+        wait(1000)
+        LPinch2.BackColor = Color.Blue
+        wait(1000)
+        LSensGota3.BackColor = Color.Blue
+        wait(1000)
         Return 0
     End Function
 
+    Private Sub wait(ByVal interval As Integer)
+        Dim sw As New Stopwatch
+        sw.Start()
+        Do While sw.ElapsedMilliseconds < interval
+            ' Allows UI to remain responsive
+            Application.DoEvents()
+        Loop
+        sw.Stop()
+    End Sub
+
     Public Function Paso1()
-        abrirValvulaSelectoraEnPos(1)
+        abrirValvulaSelectoraEnPos(2)
+        wait(4000)
         abrirValvulaPinch(3)
+        wait(4000)
+        abrirValvulaPinch(4)
+        wait(4000)
         pasarSolucionDeSistemaHastaCeldaDeMedicion()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso2()
-        Console.WriteLine("Se detecta el paso de la solución flush por la celda de medición por 1 segundo")
+        TBEstado.Text = ("Se detecta el paso de la solución flush por la celda de medición por 1 segundo")
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso3()
-        cerrarValvulaSelectoraEnPos(1)
+        cerrarValvulaSelectoraEnPos(2)
+        wait(4000)
         cerrarValvulaPinch(3)
+        wait(4000)
+        cerrarValvulaPinch(4)
+        wait(4000)
         retenerSolucionDeSistemaEnCeldaDeMedicion()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso4()
         abrirValvulaSelectoraEnPos(4)
+        wait(4000)
         abrirValvulaPinch(3)
+        wait(4000)
         abrirValvulaPinch(4)
+        wait(4000)
         pasarAirePorElSistema()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso5()
         cerrarValvulaSelectoraEnPos(4)
+        wait(4000)
         cerrarValvulaPinch(3)
+        wait(4000)
         cerrarValvulaPinch(4)
+        wait(4000)
         retenerAireEnCelda()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso6()
         abrirValvulaSelectoraEnPos(3)
+        wait(4000)
         abrirValvulaPinch(3)
+        wait(4000)
+        abrirValvulaPinch(4)
+        wait(4000)
         pasarSolucionDeCalibracion()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso7()
-        Console.WriteLine("Se detecta el paso de la solución de calibración por la celda de medición por 1 segundo")
+        TBEstado.Text = ("Se detecta el paso de la solución de calibración por la celda de medición por 1 segundo")
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso8()
         cerrarValvulaSelectoraEnPos(3)
+        wait(4000)
         cerrarValvulaPinch(3)
+        wait(4000)
+        cerrarValvulaPinch(4)
+        wait(4000)
         retenerSolucionDeCalibracion()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso9()
-        Console.WriteLine("Se mide el valor de glucosa de la solución de calibración para calibrar el instrumento")
+        TBEstado.Text = ("Se mide el valor de glucosa de la solución de calibración para calibrar el instrumento")
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso10()
         abrirValvulaSelectoraEnPos(4)
+        wait(4000)
         abrirValvulaPinch(3)
+        wait(4000)
         abrirValvulaPinch(4)
+        wait(4000)
         pasarAirePorElSistema()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso11()
         cerrarValvulaPinch(4)
+        wait(4000)
         cerrarValvulaPinch(3)
+        wait(4000)
         cerrarValvulaSelectoraEnPos(4)
+        wait(4000)
         retenerAireEnCelda()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso12()
         abrirValvulaSelectoraEnPos(1)
+        wait(4000)
         abrirValvulaPinch(3)
+        wait(4000)
         pasarMuestraDeSangre()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso13()
-        Console.WriteLine("Se detecta el paso de la muestra por la celda de medición por un segundo")
+        TBEstado.Text = ("Se detecta el paso de la muestra por la celda de medición por un segundo")
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso14()
         cerrarValvulaPinch(3)
+        wait(4000)
         cerrarValvulaSelectoraEnPos(1)
+        wait(4000)
         retenerMuestraDeSangre()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso15()
-        Console.WriteLine("Se mide el color de la muestra mediante el sensor de color.")
-        If (LSensColor.BackColor = Color.Red) Then
-            Console.WriteLine("La muestra corresponde a sangre arterial")
-            Console.WriteLine("Se mide la concentración de glucosa de la muestra con la celda de medición durante diez segundos")
+        TBEstado.Text = ("Se mide el color de la muestra mediante el sensor de color.")
+        wait(4000)
+        If (LSensColor.BackColor = Color.Firebrick) Then
+            TBEstado.Text = ("La muestra corresponde a sangre arterial")
+            TBEstado.Text = ("Se mide la concentración de glucosa de la muestra con la celda de medición durante diez segundos")
+            wait(4000)
         Else
-            Console.WriteLine("Muestra no válida")
+            TBEstado.Text = ("Muestra no válida")
+            wait(4000)
         End If
         Return 0
     End Function
 
     Public Function Paso17()
-        Console.WriteLine("Se mide la concentración de glucosa de la muestra con la celda de medición durante diez segundos")
+        TBEstado.Text = ("Se mide la concentración de glucosa de la muestra con la celda de medición durante diez segundos")
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso18()
         abrirValvulaSelectoraEnPos(4)
+        wait(4000)
         abrirValvulaPinch(3)
+        wait(4000)
         abrirValvulaPinch(4)
+        wait(4000)
         pasarAirePorElSistema()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso19()
         cerrarValvulaSelectoraEnPos(4)
+        wait(4000)
         cerrarValvulaPinch(3)
+        wait(4000)
         cerrarValvulaPinch(4)
+        wait(4000)
         retenerAireEnCelda()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso20()
         abrirValvulaSelectoraEnPos(2)
+        wait(4000)
         abrirValvulaPinch(3)
+        wait(4000)
+        abrirValvulaPinch(4)
+        wait(4000)
         pasarSolucionDeSistemaHastaCeldaDeMedicion()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso21()
-        Console.WriteLine("Se detecta el paso de la solución flush con la celda de medición por un segundo")
+        TBEstado.Text = ("Se detecta el paso de la solución flush con la celda de medición por un segundo")
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso22()
+        cerrarValvulaPinch(4)
+        wait(4000)
         cerrarValvulaPinch(3)
+        wait(4000)
         cerrarValvulaSelectoraEnPos(2)
+        wait(4000)
         retenerSolucionDeSistemaEnCeldaDeMedicion()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso23()
         abrirValvulaSelectoraEnPos(1)
+        wait(4000)
         abrirValvulaPinch(1)
+        wait(4000)
         abrirValvulaPinch(2)
+        wait(4000)
         limpiarCamaraDeMuestra()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso24()
         cerrarValvulaSelectoraEnPos(1)
+        wait(4000)
         cerrarValvulaPinch(1)
+        wait(4000)
         cerrarValvulaPinch(2)
+        wait(4000)
         LMuestraSangre.BackColor = SystemColors.ButtonFace
+        wait(4000)
         LPinch1.BackColor = SystemColors.ButtonFace
+        wait(4000)
         LPinch2.BackColor = SystemColors.ButtonFace
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso25()
         abrirValvulaSelectoraEnPos(4)
+        wait(4000)
         abrirValvulaPinch(3)
+        wait(4000)
+        abrirValvulaPinch(4)
+        wait(4000)
         pasarAirePorElSistema()
+        wait(4000)
         Return 0
     End Function
 
     Public Function Paso26()
         cerrarValvulaSelectoraEnPos(4)
+        wait(4000)
         cerrarValvulaPinch(3)
+        wait(4000)
+        cerrarValvulaPinch(4)
+        wait(4000)
         retenerAireEnCelda()
+        wait(4000)
+        TBEstado.Text = ("El sistema está listo para otra medición")
         Return 0
     End Function
 
     Private Sub BComienzo_Click(sender As Object, e As EventArgs) Handles BComienzo.Click
         If (LMuestraSangre.BackColor = Color.Firebrick) Then
-            Console.WriteLine("Hay muestra de sangre en el depósito")
+            TBEstado.Text = ("Hay muestra de sangre en el depósito")
             'LSensGota3.BackColor = Color.Firebrick
             Paso1()
             Paso2()
@@ -422,7 +594,7 @@ Public Class Form1
             Paso24()
             Paso25()
             Paso26()
-            If (LSensColor.BackColor = Color.Red) Then
+            If (LSensColor.BackColor = Color.Firebrick) Then
 
             End If
         ElseIf (LMuestraSangre.BackColor = SystemColors.ButtonFace) Then
@@ -433,6 +605,14 @@ Public Class Form1
 
     Private Sub BAgregarMuestra_Click(sender As Object, e As EventArgs) Handles BAgregarMuestra.Click
         LMuestraSangre.BackColor = Color.Firebrick
-        Console.WriteLine("Se ingresó una muestra de sangre en el sistema")
+        TBEstado.Text = ("Se ingresó una muestra de sangre en el sistema")
+    End Sub
+
+    Private Sub BDetener_Click(sender As Object, e As EventArgs) Handles BDetener.Click
+        'stopclick = True
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
